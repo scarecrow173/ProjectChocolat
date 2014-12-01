@@ -1,8 +1,0 @@
- ドライブ C のボリューム ラベルは system です
- ボリューム シリアル番号は 7E46-7171 です
-
- C:\Users\a-koyama\Documents\ProjectChocolat\Tools\premake\Win32 のディレクトリ
-
-files.bat      premake4.exe   tmp.txt        
-               3 個のファイル             331,378 バイト
-               0 個のディレクトリ  288,498,597,888 バイトの空き領域

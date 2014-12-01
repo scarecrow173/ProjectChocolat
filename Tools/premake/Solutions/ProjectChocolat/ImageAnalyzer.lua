@@ -1,7 +1,7 @@
--- Core  --
+-- ImageAnalyzer  --
 
---table.insert(ProjectChocolat.Project_Table, "Core")
-	project "../../../Core"
+--table.insert(ProjectChocolat.Project_Table, "ImageAnalyzer")
+	project "../../../../ImageAnalyzer"
 		kind "ConsoleApp"
 		language "C++"
 		files

@@ -1,8 +1,6 @@
 -- premake.lua --
-require "Tools/premake/ProjectChocolat"
-for i , ver in pairs(ProjectChocolat.Project_Table) do
-	print(ver)
-end
+require "Tools/premake/make_API"
+require "Tools/premake/Solutions"
 --solution "ProjectChocolat"
 --	configurations { "Debug", "Release" }
 --

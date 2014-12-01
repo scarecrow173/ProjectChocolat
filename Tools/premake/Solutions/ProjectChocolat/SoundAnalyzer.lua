@@ -1,7 +1,7 @@
 -- SoundAnalyzer  --
 
 --table.insert(ProjectChocolat.Project_Table, "SoundAnalyzer")
-ProjectName = "../../../SoundAnalyzer" 
+ProjectName = "../../../../SoundAnalyzer" 
 	project (ProjectName)
 		kind "ConsoleApp"
 		language "C++"
