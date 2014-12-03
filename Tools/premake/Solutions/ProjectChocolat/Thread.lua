@@ -1,6 +1,6 @@
--- Core  --
-module("Core", package.seeall)
-local ProjectName = "Core" 
+-- Thread  --
+module("Thread", package.seeall)
+local ProjectName = "Thread"
 	project (ProjectName)
 		kind "ConsoleApp"
 		language "C++"

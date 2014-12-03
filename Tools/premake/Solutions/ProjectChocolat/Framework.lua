@@ -1,6 +1,6 @@
--- Core  --
-module("Core", package.seeall)
-local ProjectName = "Core" 
+-- Framework  --
+module("Framework", package.seeall)
+local ProjectName = "Framework" 
 	project (ProjectName)
 		kind "ConsoleApp"
 		language "C++"

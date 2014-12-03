@@ -1,6 +1,6 @@
--- Core  --
-module("Core", package.seeall)
-local ProjectName = "Core" 
+-- File  --
+module("File", package.seeall)
+local ProjectName = "File" 
 	project (ProjectName)
 		kind "ConsoleApp"
 		language "C++"

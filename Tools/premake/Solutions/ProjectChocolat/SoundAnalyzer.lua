@@ -1,7 +1,6 @@
 -- SoundAnalyzer  --
-
---table.insert(ProjectChocolat.Project_Table, "SoundAnalyzer")
-ProjectName = "../../../../SoundAnalyzer" 
+module("SoundAnalyzer", package.seeall)
+local ProjectName = "SoundAnalyzer" 
 	project (ProjectName)
 		kind "ConsoleApp"
 		language "C++"

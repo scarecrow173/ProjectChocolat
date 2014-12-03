@@ -1,15 +1,15 @@
 -- ImageAnalyzer  --
-
---table.insert(ProjectChocolat.Project_Table, "ImageAnalyzer")
-	project "../../../../ImageAnalyzer"
+module("ImageAnalyzer", package.seeall)
+local ProjectName = "ImageAnalyzer"
+	project (ProjectName)
 		kind "ConsoleApp"
 		language "C++"
 		files
 		{
-			"Source/**.h",
-			"Source/**.c",
-			"Source/**.hpp",
-			"Source/**.cpp",
+			ProjectName .. "/**.h",
+			ProjectName .. "/**.c",
+			ProjectName .. "/**.hpp",
+			ProjectName .. "/**.cpp",
 		}
 		configuration "Debug"
 			defines
