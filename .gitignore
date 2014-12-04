@@ -1,0 +1,10 @@
+*.sln
+*.sdf
+*.vcproj
+*.vcxproj*
+*.vcxproj
+*.vcxproj.*
+*.file
+*.suo
+
+Document

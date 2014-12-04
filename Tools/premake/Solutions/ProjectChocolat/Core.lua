@@ -1,32 +1,24 @@
 -- Core  --
 module("Core", package.seeall)
 local ProjectName = "Core" 
-	project (ProjectName)
-		kind "ConsoleApp"
-		language "C++"
-		files
-		{
-			ProjectName .. "/**.h",
-			ProjectName .. "/**.c",
-			ProjectName .. "/**.hpp",
-			ProjectName .. "/**.cpp",
-		}
-		configuration "Debug"
-			defines
-			{
-				"DEBUG"
-			}
-			flags
-			{
-				"Symbols"
-			}
+local DebugDefines =
+{
+	"DEBUG"
+}
+local ReleaseDefines =
+{
+	"NDEBUG"
+}
+project (ProjectName)
+	kind "ConsoleApp"
+	language "C++"
+	files
+	{
+		ProjectName .. "/**.h",
+		ProjectName .. "/**.c",
+		ProjectName .. "/**.hpp",
+		ProjectName .. "/**.cpp",
+	}
+make_API.SetupConfiguration("Debug", DebugDefines, "", "", "", "Symbols")
+make_API.SetupConfiguration("Release", ReleaseDefines, "", "", "", "Optimize")
 
-		configuration "Release"
-			defines
-			{
-				"NDEBUG"
-			}
-			flags
-			{
-				"Optimize"
-			}
