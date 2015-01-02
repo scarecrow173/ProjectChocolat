@@ -1,32 +1,23 @@
 -- File  --
 module("File", package.seeall)
 local ProjectName = "File" 
-	project (ProjectName)
-		kind "ConsoleApp"
-		language "C++"
-		files
-		{
-			ProjectName .. "/**.h",
-			ProjectName .. "/**.c",
-			ProjectName .. "/**.hpp",
-			ProjectName .. "/**.cpp",
-		}
-		configuration "Debug"
-			defines
-			{
-				"DEBUG"
-			}
-			flags
-			{
-				"Symbols"
-			}
+local DebugDefines =
+{
+	"DEBUG"
+}
+local ReleaseDefines =
+{
+	"NDEBUG"
+}
+local LinkProjects =
+{
+	"Core"
+}
+make_API.SetupProject (ProjectName)
+make_API.SettingCppStaticLibProject()
+make_API.SettingCppFiles(ProjectName)
+--Debug Setting--
+make_API.SetupConfiguration("Debug", DebugDefines, "lib", "", LinkProjects, "", "Symbols")
+--Release Setting--
+make_API.SetupConfiguration("Release", ReleaseDefines, "lib", "", LinkProjects, "", "Optimize")
 
-		configuration "Release"
-			defines
-			{
-				"NDEBUG"
-			}
-			flags
-			{
-				"Optimize"
-			}

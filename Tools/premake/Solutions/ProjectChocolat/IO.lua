@@ -1,6 +1,6 @@
--- Debugger  --
-module("Debugger", package.seeall)
-local ProjectName = "Debugger" 
+-- IO  --
+module("IO", package.seeall)
+local ProjectName = "IO"
 local DebugDefines =
 {
 	"DEBUG"
@@ -20,4 +20,3 @@ make_API.SettingCppFiles(ProjectName)
 make_API.SetupConfiguration("Debug", DebugDefines, "lib", "", LinkProjects, "", "Symbols")
 --Release Setting--
 make_API.SetupConfiguration("Release", ReleaseDefines, "lib", "", LinkProjects, "", "Optimize")
-
