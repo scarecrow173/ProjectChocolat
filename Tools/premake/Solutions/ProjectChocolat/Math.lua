@@ -20,4 +20,3 @@ make_API.SettingCppFiles(ProjectName)
 make_API.SetupConfiguration("Debug", DebugDefines, "lib", "", LinkProjects, "", "Symbols")
 --Release Setting--
 make_API.SetupConfiguration("Release", ReleaseDefines, "lib", "", LinkProjects, "", "Optimize")
-include("Core/Core")
