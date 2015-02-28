@@ -17,23 +17,18 @@ end
 ----------------------------------
 function SetupConfiguration(targetConfig, define, targetDir, libDirs, linkLibs, includeDirs, flag)
 	configuration (targetConfig)
+	defines(define)
+	targetdir("Bin" .. "/" .. targetConfig .. "/" .. targetDir)
+	libdirs("Bin" .. "/" .. targetConfig .. "/" .. "lib")
+	links(linkLibs)
+	includedirs(linkLibs)
+	includedirs(includeDirs)
+	flags(flag)
 	
 	if (os.get() == "windows") then
-		defines(define)
-		targetdir("Bin" .. "/" .. targetConfig .. "/" .. targetDir)
-		libdirs("Bin" .. "/" .. targetConfig .. "/" .. "lib")
-		links(linkLibs)
-		includedirs(linkLibs)
-		includedirs(includeDirs)
-		flags(flag)
+		defines("_CHOCOLAT_WINDOWS_")
 	elseif (os.get() == "macosx") then
-		defines(define)
-		targetdir("Bin" .. "/" .. targetConfig .. "/" .. targetDir)
-		libdirs("Bin" .. "/" .. targetConfig .. "/" .. "lib")
-		links(linkLibs)
-		includedirs(linkLibs)
-		includedirs(includeDirs)
-		flags(flag)
+		defines("_CHOCOLAT_OSX_")
 	else
 		
 	end
