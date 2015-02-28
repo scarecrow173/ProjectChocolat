@@ -6,5 +6,10 @@
 *.vcxproj.*
 *.file
 *.suo
+*.ipch
+*.xcodeproj
+*.xcworkspace
+*.make
 
 Document
+obj

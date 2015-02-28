@@ -1,2 +1,2 @@
-call Tools\premake\Win32\premake4 vs2012
+call Tools\premake\Win32\premake4 vs2013
 pause
