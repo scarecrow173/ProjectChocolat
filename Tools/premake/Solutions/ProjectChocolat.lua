@@ -18,3 +18,7 @@ require(Project_Path .. "/Profile")
 require(Project_Path .. "/Framework")
 --require(Project_Path .. "/ImageAnalyzer")
 --require(Project_Path .. "/SoundAnalyzer")
+
+------------------------------------------
+-- Applications --
+require(Project_Path .. "/wxWidgetsSample")
