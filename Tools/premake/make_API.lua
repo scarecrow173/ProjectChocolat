@@ -5,9 +5,11 @@ module("make_API", package.seeall)
 ----------------------------------
 function SetupProject(projectName)
 	project(projectName)
-	pchheader(projectName .. ".h")
-	pchsource(projectName .. ".cpp")
-	buildoptions("/Yc" .. projectName .. ".h")
+	if (os.get() == "windows") then
+		pchheader(projectName .. ".h")
+		pchsource(projectName .. ".cpp")
+		buildoptions("/Yc" .. projectName .. ".h")
+	end
 
 end
 ----------------------------------
@@ -25,7 +27,13 @@ function SetupConfiguration(targetConfig, define, targetDir, libDirs, linkLibs, 
 		includedirs(includeDirs)
 		flags(flag)
 	elseif (os.get() == "macosx") then
-		
+		defines(define)
+		targetdir("Bin" .. "/" .. targetConfig .. "/" .. targetDir)
+		libdirs("Bin" .. "/" .. targetConfig .. "/" .. "lib")
+		links(linkLibs)
+		includedirs(linkLibs)
+		includedirs(includeDirs)
+		flags(flag)
 	else
 		
 	end
