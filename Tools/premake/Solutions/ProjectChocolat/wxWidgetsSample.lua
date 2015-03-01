@@ -37,15 +37,20 @@ local ReleaseDefines =
 }
 local LinkProjects =
 {
-	"Dependencies/wxWidgets-3.0.2/include/",
-	"Dependencies/wxWidgets-3.0.2/include/**",
-	"Dependencies/wxWidgets-3.0.2/samples/",
+--	"Dependencies/wxWidgets-3.0.2/include/",
+--	"Dependencies/wxWidgets-3.0.2/include/**",
+--	"Dependencies/wxWidgets-3.0.2/samples/",
 --	"Dependencies/wxWidgets-3.0.2/include/msvc"
+}
+local IncludeDirs =
+{
+	"Dependencies/wxWidgets-3.0.2/include/",
+	"Dependencies/wxWidgets-3.0.2/include/wx",
 }
 make_API.SetupProject (ProjectName)
 make_API.SettingCppApplicationProject()
 make_API.SettingCppFiles(ProjectName)
 --Debug Setting--
-make_API.SetupConfiguration("Debug", DebugDefines, "lib", "", LinkProjects, "", "Symbols")
+make_API.SetupConfiguration("Debug", DebugDefines, "lib", "", LinkProjects, IncludeDirs, "Symbols")
 --Release Setting--
-make_API.SetupConfiguration("Release", ReleaseDefines, "lib", "", LinkProjects, "", "Optimize")
+make_API.SetupConfiguration("Release", ReleaseDefines, "lib", "", LinkProjects, IncludeDirs, "Optimize")
