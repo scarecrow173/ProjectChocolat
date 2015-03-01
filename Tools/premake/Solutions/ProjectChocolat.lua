@@ -6,6 +6,7 @@ local Project_Path = Solutions_DirPath .. Solution_Name
 solution (Solution_Name)
 configurations { "Debug", "Release" }
 
+
 require(Project_Path .. "/Core")
 require(Project_Path .. "/Math")
 require(Project_Path .. "/Memory")
@@ -16,9 +17,14 @@ require(Project_Path .. "/Debugger")
 require(Project_Path .. "/Profile")
 --require(Project_Path .. "/Window")
 require(Project_Path .. "/Framework")
+require(Project_Path .. "/Generics")
 --require(Project_Path .. "/ImageAnalyzer")
 --require(Project_Path .. "/SoundAnalyzer")
 
 ------------------------------------------
--- Applications --
+-- Console Applications --
 require(Project_Path .. "/wxWidgetsSample")
+
+
+------------------------------------------
+-- Window Applications --

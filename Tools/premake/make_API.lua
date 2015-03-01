@@ -41,11 +41,19 @@ function SettingCppStaticLibProject()
 	language "C++"
 end
 ----------------------------------
---	C++ Static Lib Setting		--
+--	C++ Console Application Setting		--
 ----------------------------------
 function SettingCppApplicationProject()
 	kind "ConsoleApp"
 	language "C++"
+end
+----------------------------------
+--	C++ Console Application Setting		--
+----------------------------------
+function SettingCppMainApplicationProject()
+	kind "WindowedApp"
+	language "C++"
+	flags("WinMain")
 end
 ----------------------------------
 --	C++ Files Dir Setting		--

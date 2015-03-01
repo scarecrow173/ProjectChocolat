@@ -1,9 +1,13 @@
 //=======================================================================================
-//!	@file	:	Memory.h
+//!	@file	:	Generics.h
 //!	@author	:	小山 瑛圭
 //!	@date	:	2014/12/30
-//! @brief	:	プリコンパイル済みヘッダ
+//! @brief	:	PCH
 //=======================================================================================
 #pragma once
 
-#include "MemoryMacros.h"
+#include "Core.h"
+#include "Memory.h"
+#include "NonCopytable.h"
+#include "Singleton.h"
+#include "State.h"

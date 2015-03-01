@@ -6,6 +6,7 @@
 //=======================================================================================
 #pragma once
 
+#include "GuardMacros.h"
 #include "Types.h"
 #include "TypeConstants.h"
 #include "RefCounter.h"
