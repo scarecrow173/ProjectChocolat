@@ -46,6 +46,7 @@ local IncludeDirs =
 {
 	"Dependencies/wxWidgets-3.0.2/include/",
 	"Dependencies/wxWidgets-3.0.2/include/wx",
+	"Dependencies/wxWidgets-3.0.2/include/wx/osx",
 }
 make_API.SetupProject (ProjectName)
 make_API.SettingCppApplicationProject()
