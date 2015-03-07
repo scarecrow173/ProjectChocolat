@@ -15,16 +15,26 @@ end
 ----------------------------------
 --	Config Setting				--
 ----------------------------------
-function SetupConfiguration(targetConfig, define, targetDir, libDirs, linkLibs, includeDirs, flag)
+function SetupConfiguration(targetConfig, define, targetDir, libDirs, linkLibs, LinkProjects, includeDirs, flagOption)
 	configuration (targetConfig)
 	defines(define)
 	targetdir("Bin" .. "/" .. targetConfig .. "/" .. targetDir)
+
 	libdirs("Bin" .. "/" .. targetConfig .. "/" .. "lib")
+	libdirs(libDirs)
 	links(linkLibs)
-	includedirs(linkLibs)
+
+	links(LinkProjects)
+	includedirs(LinkProjects)
+
 	includedirs(includeDirs)
-	flags(flag)
-	
+
+	if (targetConfig == "Debug") then
+		flags ("Symbols")
+	elseif (targetConfig == "Release") then
+		flags ("Optimize")
+	end
+
 	if (os.get() == "windows") then
 		defines("_CHOCOLAT_WINDOWS_")
 	elseif (os.get() == "macosx") then
