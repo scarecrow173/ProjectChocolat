@@ -1,0 +1,23 @@
+RtAudio 備忘録
+検証環境
+	MacOSX 10.8.5 Mountain Lion
+	Xcode 4.6.3
+
+-RtAudio4.1.1
+●RtErrorクラスはRtAudioErrorに変更
+	RtAudio関連記事にてサンプルコードに“RtError &error"というコードが散見するが
+	4.1.1より"RtError"から"RtAudioError"にリネームされているため、コンパイルエラーになるので注意。
+	※ソース：http://www.music.mcgill.ca/~gary/rtaudio/index.html
+	＜対処法＞
+		"RtError"を"RtAudioError"に置換すればおk。…当然かw
+
+●APIが検出されない？
+	"RtApiDummy: This class provides no functionality."という標準出力メッセージが出る。。。
+	Macの場合だとMACOSX_COREとなるんじゃないかと踏んでいるが、RTAUDIO_DUMMYになってしまっている。。
+	※RtAudio.cpp内の各所"#if defined(__xxxx_xx__)" でRTAUDIO_DUMMYが有効になっている。
+	…リンクライブラリの問題？
+		MacOSXの場合はCoreAudio.framework,pthreadが利用されるっぽいので、CoreAudio.frameworkを追加したが
+		現状、変わらず。。。
+		pthreadはpthread.frameworkみたいなのがなかったが、libpthread.dylibはあった。
+		
+	
