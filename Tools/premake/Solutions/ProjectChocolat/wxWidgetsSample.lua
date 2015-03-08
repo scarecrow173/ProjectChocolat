@@ -20,8 +20,8 @@ local ReleaseIncludeDirs =
 {
 	"Dependencies/wxWidgets-3.0.2/include/",	
 }
-local DebugLibDirs={"Dependencies/wxWidgets-3.0.2/lib/vc_lib"}
-local ReleaseLibDirs={"Dependencies/wxWidgets-3.0.2/lib/vc_lib"}
+local DebugLibDirs={}
+local ReleaseLibDirs={}
 
 if (os.get() == "windows") then
 	table.insert(DebugDefines ,
@@ -81,6 +81,8 @@ if (os.get() == "windows") then
 			"wininet",
 	}
 	)
+	table.insert(DebugLibDirs,"Dependencies/wxWidgets-3.0.2/lib/vc_lib")
+	table.insert(ReleaseLibDirs,"Dependencies/wxWidgets-3.0.2/lib/vc_lib")
 
 elseif(os.get() == "macosx") then
 	table.insert(DebugDefines ,
@@ -98,6 +100,8 @@ elseif(os.get() == "macosx") then
 			"WX_PRECOMP=1",
 			"wxUSE_UNICODE_UTF8=0",
 			"wxUSE_UNICODE_WCHAR=1",
+			"__WXOSX_COCOA__",
+			"WXROOT=$(PROJECT_DIR)/Dependencies/wxWidgets-3.0.2",
 		}
 	)
 	table.insert(ReleaseDefines ,
@@ -115,15 +119,14 @@ elseif(os.get() == "macosx") then
 			"WX_PRECOMP=1",
 			"wxUSE_UNICODE_UTF8=0",
 			"wxUSE_UNICODE_WCHAR=1",
+			"__WXOSX_COCOA__",
+			"WXROOT=$(PROJECT_DIR)/Dependencies/wxWidgets-3.0.2",
 		}
 	)
-	table.insert(DebugIncludeDirs,
-		{"Dependencies/wxWidgets-3.0.2/include/wx",	
-		"Dependencies/wxWidgets-3.0.2/include/wx/osx"}
-		)
-	table.insert(ReleaseIncludeDirs,
-		{"Dependencies/wxWidgets-3.0.2/include/wx",
-		"Dependencies/wxWidgets-3.0.2/include/wx/osx"})
+	table.insert(DebugIncludeDirs, 1,
+		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
+	table.insert(ReleaseIncludeDirs, 1,
+		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
 
 else
 

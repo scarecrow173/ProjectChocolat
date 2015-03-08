@@ -17,7 +17,7 @@ namespace Chocolat
 		//!	@note	:	example
 		//=======================================================================================
 		template<class T>
-		class Singleton : private NonCopytable<Singleton<T>>
+		class Singleton : private NonCopytable<Singleton<T> >
 		{
 		public:
 			static void		Destory();
