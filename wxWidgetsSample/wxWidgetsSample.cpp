@@ -1,6 +1,7 @@
 #include "wxWidgetsSample.h"
 #include <stdio.h>
 #include "ImageWriter.h"
+#include "AudioLoader.h"
 //int main()
 //{
 //    printf("wxWidgetsSample!!\n");
@@ -51,7 +52,9 @@ void wxWidgetsSampleFrame::OnSelectFile(wxCommandEvent& WXUNUSED(event))
 	if (dlg.ShowModal() == wxID_OK)
 	{
 		wxBitmap image;
-		
+        
+		AudioLoader *audioLoad = new AudioLoader(dlg.GetPath());
+        unsigned char *wavtable = audioLoad->wav->pcmData();
 	}
 }
 void wxWidgetsSampleFrame::OnQuit(wxCommandEvent& event)

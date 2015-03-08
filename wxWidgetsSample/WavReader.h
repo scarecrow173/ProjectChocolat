@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 toru-wakabayashi. All rights reserved.
 //
 #pragma once
-
+#include <fstream>
 typedef struct {
     unsigned int id;       // "fmt "
     unsigned int bytes;    // fmtチャンクのバイト数
