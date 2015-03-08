@@ -55,7 +55,6 @@ void wxWidgetsSampleFrame::OnSelectFile(wxCommandEvent& WXUNUSED(event))
 	{
         
 		AudioLoader *audioLoad = new AudioLoader(dlg.GetPath());
-        unsigned char* wavtable = audioLoad->wav->pcmData();
 		
 		const int widht = 256;
 		const int height = 256;
@@ -115,5 +114,9 @@ IMPLEMENT_APP(wxWidgetsSampleApp)
 
 void ConvertPCMToImageData(WAVReader* reader, unsigned char* rawImage)
 {
-	
+    unsigned char* wavtable = reader->pcmData();
+    for (int i=0; i<sizeof(rawImage)/sizeof(rawImage[0]); ++i)
+    {
+        rawImage[i] = wavtable[i];
+    }
 }

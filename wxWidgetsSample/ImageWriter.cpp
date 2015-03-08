@@ -18,9 +18,9 @@ bool ImageWriter::Write(const char* filePath, unsigned int width, unsigned int h
 		wxNativePixelData::Iterator rowStart = it;
 		for (size_t j = 0; j < width; j++)
 		{
-			it.Red() = 100;
-			it.Green() = 100;
-			it.Blue() = 100;
+			it.Red() = data[j+(width*i*3+0)];
+			it.Green() = data[j+(width*i*3+1)];
+			it.Blue() = data[j+(width*i*3+2)];
 			++it;
 		}
 		it = rowStart;

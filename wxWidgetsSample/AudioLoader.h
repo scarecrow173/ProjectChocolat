@@ -11,7 +11,6 @@
 #pragma once
 #include "RtAudio.h"
 #include "WavReader.h"
-#include <string>
 
 typedef struct {
     unsigned int	nRate;		/* Sampling Rate (sample/sec) */
