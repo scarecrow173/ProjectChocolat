@@ -32,6 +32,7 @@ public:
 	void OnSelectFile(wxCommandEvent& event);
 	void OnQuit(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
+	void OnSave(wxCommandEvent& event);
 	void NotifyUsingFile(const wxString& name);
 
 	wxDECLARE_EVENT_TABLE();
@@ -42,7 +43,7 @@ enum wxMenuCommand
 {
 	// menu items
 	SelectFile = wxID_HIGHEST + 1,
-
+	SaveFile,
 	Quit = wxID_EXIT,
 	About = wxID_ABOUT
 };

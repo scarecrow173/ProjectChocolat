@@ -1,6 +1,6 @@
 #include "wxWidgetsSample.h"
 #include <stdio.h>
-
+#include "ImageWriter.h"
 //int main()
 //{
 //    printf("wxWidgetsSample!!\n");
@@ -11,6 +11,7 @@
 //}
 wxBEGIN_EVENT_TABLE(wxWidgetsSampleFrame, wxFrame)
 	EVT_MENU(SelectFile, wxWidgetsSampleFrame::OnSelectFile)
+	EVT_MENU(SaveFile, wxWidgetsSampleFrame::OnSave)
 	EVT_MENU(Quit, wxWidgetsSampleFrame::OnQuit)
 	EVT_MENU(About, wxWidgetsSampleFrame::OnAbout)
 wxEND_EVENT_TABLE()
@@ -20,6 +21,7 @@ wxWidgetsSampleFrame::wxWidgetsSampleFrame(const wxString& title)
 {
 	wxMenu* menuFile = new wxMenu();
 	menuFile->Append(SelectFile, wxT("Select WAV &file...\tCtrl-O"), wxT("Select a new wav file to play"));
+	menuFile->Append(SaveFile, wxT("Save Image &file...\tCtrl-S"), wxT("Save to Image File"));
 	menuFile->Append(Quit, wxT("E&xit\tAlt-X"), wxT("Quit this program"));
 
 	wxMenu *helpMenu = new wxMenu();
@@ -48,6 +50,8 @@ void wxWidgetsSampleFrame::OnSelectFile(wxCommandEvent& WXUNUSED(event))
 		wxFD_OPEN | wxFD_CHANGE_DIR);
 	if (dlg.ShowModal() == wxID_OK)
 	{
+		wxBitmap image;
+		
 	}
 }
 void wxWidgetsSampleFrame::OnQuit(wxCommandEvent& event)
@@ -57,6 +61,29 @@ void wxWidgetsSampleFrame::OnQuit(wxCommandEvent& event)
 }
 void wxWidgetsSampleFrame::OnAbout(wxCommandEvent& event)
 {}
+
+void wxWidgetsSampleFrame::OnSave(wxCommandEvent& event)
+{
+	wxFileDialog dlg(this, wxT("Choose a sound file"),
+		wxEmptyString, wxEmptyString,
+		wxString::Format
+		(
+		"WAV files (*.bmp)|*.bmp|All files (%s)|%s",
+		wxFileSelectorDefaultWildcardStr,
+		wxFileSelectorDefaultWildcardStr
+		),
+		wxFD_SAVE | wxFD_CHANGE_DIR);
+	if (dlg.ShowModal() == wxID_OK)
+	{
+		dlg.GetPath();
+		ImageWriter writer;
+		unsigned char data[] =
+		{
+			0x52, 0x49, 0x46, 0x46, 0x00, 0x1f, 0x00, 0x00, 0x57, 0x41, 0x56, 0x52, 0x49, 0x46, 0x46, 0x00, 0x1f, 0x00, 0x00, 0x57, 0x41, 0x56,
+		};
+		writer.Write(dlg.GetPath(), 256, 256, data);
+	}
+}
 void wxWidgetsSampleFrame::NotifyUsingFile(const wxString& name)
 {
 }
