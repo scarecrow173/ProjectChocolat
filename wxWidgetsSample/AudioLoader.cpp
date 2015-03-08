@@ -5,6 +5,7 @@
 //  Created by toru-bayashi on 2015/03/08.
 //  Copyright (c) 2015年 toru-wakabayashi. All rights reserved.
 //
+#include "wxWidgetsSample.h"
 
 #include "AudioLoader.h"
 

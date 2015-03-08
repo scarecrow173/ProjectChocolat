@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "ImageWriter.h"
 #include "AudioLoader.h"
+
+void ConvertPCMToImageData(WAVReader* reader, unsigned char* rawImage);
 //int main()
 //{
 //    printf("wxWidgetsSample!!\n");
@@ -51,10 +53,20 @@ void wxWidgetsSampleFrame::OnSelectFile(wxCommandEvent& WXUNUSED(event))
 		wxFD_OPEN | wxFD_CHANGE_DIR);
 	if (dlg.ShowModal() == wxID_OK)
 	{
-		wxBitmap image;
         
 		AudioLoader *audioLoad = new AudioLoader(dlg.GetPath());
-        unsigned char *wavtable = audioLoad->wav->pcmData();
+        unsigned char* wavtable = audioLoad->wav->pcmData();
+		
+		const int widht = 256;
+		const int height = 256;
+		const int colorNum = 3; // RGB
+		unsigned char* rawData = new unsigned char[(widht * height) * colorNum];
+
+		ConvertPCMToImageData(audioLoad->wav, rawData);
+
+		wxString path = dlg.GetPath().append(".bmp");
+		ImageWriter writer;
+		writer.Write(path, widht, height, rawData);
 	}
 }
 void wxWidgetsSampleFrame::OnQuit(wxCommandEvent& event)
@@ -100,3 +112,8 @@ bool wxWidgetsSampleApp::OnInit()
 }
 
 IMPLEMENT_APP(wxWidgetsSampleApp)
+
+void ConvertPCMToImageData(WAVReader* reader, unsigned char* rawImage)
+{
+	
+}

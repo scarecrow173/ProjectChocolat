@@ -43,9 +43,9 @@ if (os.get() == "windows") then
 		}
 	)
 	table.insert(DebugIncludeDirs,
-		"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswud")
+		{"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswud","Dependencies/rtaudio-4.1.1"})
 	table.insert(ReleaseIncludeDirs,
-		"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswu")
+		{"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswu", "Dependencies/rtaudio-4.1.1"})
 
 	table.insert(DebugLinkLibs,
 		{
