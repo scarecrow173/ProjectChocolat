@@ -125,11 +125,33 @@ elseif(os.get() == "macosx") then
 			"__MACOSX_CORE__",
 		}
 	)
-	table.insert(DebugIncludeDirs, 2,
-		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include","Dependencies/rtaudio-4.1.1"})
-	table.insert(ReleaseIncludeDirs, 2,
-		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include","Dependencies/rtaudio-4.1.1"})
+	table.insert(DebugIncludeDirs, 1,
+		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
+	table.insert(ReleaseIncludeDirs, 1,
+		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
 
+	table.insert(DebugIncludeDirs ,
+		{
+			"Dependencies/rtaudio-4.1.1",
+		}
+	)
+	table.insert(ReleaseIncludeDirs ,
+		{
+			"Dependencies/rtaudio-4.1.1",
+		}
+	)
+	
+	table.insert(DebugLinkLibs,
+		{
+			"CoreAudio.framework",
+		}
+	)
+	table.insert(ReleaseLinkLibs,
+		{
+			"CoreAudio.framework",
+	}
+	)
+	
 else
 
 end
