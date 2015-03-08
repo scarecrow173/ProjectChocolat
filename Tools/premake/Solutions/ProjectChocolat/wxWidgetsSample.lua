@@ -102,6 +102,7 @@ elseif(os.get() == "macosx") then
 			"wxUSE_UNICODE_WCHAR=1",
 			"__WXOSX_COCOA__",
 			"WXROOT=$(PROJECT_DIR)/Dependencies/wxWidgets-3.0.2",
+			"__MACOSX_CORE__",
 		}
 	)
 	table.insert(ReleaseDefines ,
@@ -121,12 +122,13 @@ elseif(os.get() == "macosx") then
 			"wxUSE_UNICODE_WCHAR=1",
 			"__WXOSX_COCOA__",
 			"WXROOT=$(PROJECT_DIR)/Dependencies/wxWidgets-3.0.2",
+			"__MACOSX_CORE__",
 		}
 	)
-	table.insert(DebugIncludeDirs, 1,
-		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
-	table.insert(ReleaseIncludeDirs, 1,
-		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
+	table.insert(DebugIncludeDirs, 2,
+		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include","Dependencies/rtaudio-4.1.1"})
+	table.insert(ReleaseIncludeDirs, 2,
+		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include","Dependencies/rtaudio-4.1.1"})
 
 else
 
