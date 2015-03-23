@@ -18,6 +18,16 @@ RtAudio 備忘録
 	…リンクライブラリの問題？
 		MacOSXの場合はCoreAudio.framework,pthreadが利用されるっぽいので、CoreAudio.frameworkを追加したが
 		現状、変わらず。。。
-		pthreadはpthread.frameworkみたいなのがなかったが、libpthread.dylibはあった。
+		pthreadはpthread.frameworkみたいなのがなかったが、libpthread.dylibはあった。POSIX threadのライブラリらしい。
 		
-	
+	どうやら下記設定は必須の模様。（sine波を生成して再生させるサンプルコードで検証）
+	＜設定事項１＞
+		TARGETS -> Build Settings -> Apple LLVM compiler 4.2 - Preprocessing(スクロールの2/3あたり)
+		Preprocessor Macrosに"__MACOSX_CORE__"を追加すればおk。(""は無しでおk)
+		※ソース：http://stackoverflow.com/questions/9150496/how-to-specify-d-macosx-core-in-xcode
+	＜設定事項２＞
+		TARGETS -> Build Settings -> Build Phases -> Link Binary With Librariesに
+		CoreAudio.frameworkを追加
+		…もしかしたらlibpthread.dylibも必要になるかも。
+		
+		
