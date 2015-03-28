@@ -1,0 +1,393 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"flag",
+				"flags"
+			],
+			[
+				"de",
+				"defines"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Solutions.lua",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "make_API.lua",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/User/Documents/ProjectChocolat/premake4.lua",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/PremakeProject.sublime-project",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Audio.lua",
+		"/C/Users/User/Documents/orico",
+		"/C/Users/User/Documents/ProjectChocolat/premake4.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Math.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Memory.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/File.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Audio/Math.h",
+		"/C/Users/User/Documents/ProjectChocolat/Audio/Math.cpp",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/IO.lua",
+		"/C/Users/User/Music/BGM_03.wav.txt",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/wxWidgetsSample.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Window.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Thread.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Core.lua",
+		"/C/Users/User/Documents/ProjectChocolat/_waka_draft/RtAudio_Report.txt",
+		"/C/Users/User/Documents/ProjectChocolat/_waka_draft/KoeMon_SpecMemo.txt",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/make_API.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/ImageAnalyzer.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Generics.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Framework.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Debugger.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/Profile.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/SoundAnalyzer.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Dependencies/wxWidgets-3.0.2/build/osx/readme.txt",
+		"/C/Program Files (x86)/XMind/readme.txt",
+		"/C/Users/User/Downloads/portaudio_v18_1/portaudio_v18_1/README.txt",
+		"/C/Users/User/Documents/premake-4.x/src/actions/xcode/xcode4_workspace.lua",
+		"/C/Users/User/Documents/premake-4.x/src/actions/xcode/xcode_common.lua",
+		"/C/Users/User/Documents/premake-4.x/src/actions/xcode/xcode_project.lua",
+		"/C/Users/User/Documents/Helium/Dependencies/bullet/Demos/DX11ClothDemo/premake4.lua",
+		"/C/Users/User/Documents/Helium/Helium.lua",
+		"/C/Users/User/Documents/ProjectChocolat/GenerateProject.bat",
+		"/C/Users/User/Documents/ProjectChocolat/.gitignore",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/ProjectChocolat/EntryApplication.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions.lua",
+		"/C/Users/User/Documents/Helium/premake4.lua",
+		"/C/Users/User/Documents/premake-4.x/src/actions/xcode/_xcode.lua",
+		"/C/Users/User/Documents/premake-4.x/build.bat",
+		"/C/Users/User/Documents/premake-4.x/BUILD.txt",
+		"/C/Users/User/Documents/premake-4.x/README.txt",
+		"/C/Users/User/Documents/premake-4.x/.hg/store/data/src/host/scripts.c.i",
+		"/C/Users/User/Documents/Helium/Helium.sublime-project",
+		"/C/Users/User/Documents/ProjectChocolat/Dependencies/wxWidgets-3.0.2/build/README.txt",
+		"/C/Users/User/Documents/ProjectChocolat/VSBuild.bat",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/Dependencies/wxWidgets.lua",
+		"/C/Users/User/Documents/Helium/Dependencies/wxWidgets.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Tools/premake/Solutions/Dependencies.lua",
+		"/C/Users/User/Documents/ProjectChocolat/Dependencies/wxWidgets-3.0.2/BuildSVN.txt",
+		"/C/Users/User/Documents/ProjectChocolat/History.txt",
+		"/C/Users/User/Documents/ProjectChocolat/GenerateProject.sh",
+		"/C/Users/User/Documents/Helium/premake.sh",
+		"/C/Users/User/Documents/Helium/Runtime.lua",
+		"/C/Users/User/Desktop/test.wav",
+		"/C/Users/User/Documents/VSTestProject/DBAccess/DBAccess/bin/Debug/ResultText.png",
+		"/C/Users/User/Pictures/mqdefault.jpg",
+		"/C/Users/User/Documents/Helium/Core.lua",
+		"/C/Users/User/Documents/Helium/Dependencies/bullet/Demos/premake4.lua",
+		"/C/Users/User/Documents/Helium/README.md",
+		"/C/Users/User/Documents/Helium/premake.bat",
+		"/C/Users/User/Documents/UnrealEngine/README.md",
+		"/C/Users/User/Documents/wxWidgets-3.0.2/autogen.sh",
+		"/C/Users/User/Documents/Helium/Dependencies/Dependencies.lua",
+		"/C/Users/User/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/User/Documents/Helium/Dependencies/fbx.lua",
+		"/C/Users/User/Documents/Helium/Helium.xcodeproj/xcuserdata/geoff.xcuserdatad/xcschemes/Helium.xcscheme",
+		"/C/Users/User/Documents/Helium/Helium.xcodeproj/project.pbxproj",
+		"/C/Users/User/Pictures/ResultText.png",
+		"/C/Users/User/Music/MIXTRAX/Battle Sound/Iron.wav",
+		"/C/Users/User/Documents/Helium/Dependencies/bullet/build/premake4.lua",
+		"/C/Users/User/Documents/Helium/Shared.lua",
+		"/C/Users/User/Documents/VSTestProject/DBAccess/DBAccess/bin/Debug/test.png",
+		"/C/Users/User/Documents/VSTestProject/DBAccess/DBAccess/bin/Debug/testByte.png",
+		"/C/Users/User/Documents/VSTestProject/DBAccess/DBAccess/bin/Debug/testString.png",
+		"/C/Users/User/Documents/BlockSmash/testGUI/Ingame.h",
+		"/C/Users/User/Documents/BlockSmash/testGUI/IngameView.h",
+		"/C/Users/User/Documents/BlockSmash/testGUI/window_top.h",
+		"/C/Users/User/Documents/BlockSmash/testGUI/window_top2.cpp",
+		"/C/Users/User/Documents/BlockSmash/testGUI/window_top.cpp",
+		"/C/Users/User/Documents/Test/EmptyProject/Source/MyMath.h",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/file/lnFileState.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/file/lnFile.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/AllRelease/AllRelease.bat",
+		"/C/Users/User/AppData/Local/Temp/fz3temp-1/index.html",
+		"/C/Users/User/Documents/BlockSmash/testGUI/Ingame.cpp",
+		"/C/Users/User/Documents/BlockSmash/testGUI/IngameView.cpp",
+		"/C/Users/User/Documents/VSTestProject/DBAccess/DBAccess/bin/Debug/test2.png",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/all/luna_all.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/core/lnCore.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/core/lnDefine.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/core/lnTypes.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/run/winMain.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/source_description/description.cpp",
+		"/C/Users/User/Documents/LunaProject/developer/programmer/source/source_description/description.h",
+		"/C/Users/User/Documents/ProjectChocolat/Core/Types.h",
+		"/C/Users/User/Documents/ProjectChocolat/GenerateDocument.sh",
+		"/C/Users/User/Documents/BlockSmash/testGUI/test-Info.plist",
+		"/C/Users/User/Documents/Helium/Dependencies/Helium.lua",
+		"/C/Users/User/Documents/Helium/Dependencies/premake4.lua",
+		"/C/Users/User/Desktop/id_rsa.pub",
+		"/C/Users/User/Documents/Helium/Doxyfile",
+		"/C/Users/User/Documents/ProjectChocolat/Doxyfile",
+		"/C/Users/User/Documents/ProjectChocolat/GenerateDocument.bat",
+		"/C/Users/User/Documents/Helium/Reflect/TranslateBuiltin.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/Tests.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/Tests.h",
+		"/C/Users/User/Documents/Helium/Reflect/Registry.inl",
+		"/C/Users/User/Documents/Helium/Reflect/Registry.h",
+		"/C/Users/User/Documents/Helium/Reflect/Registry.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/Translator.h",
+		"/C/Users/User/Documents/Helium/Reflect/Translator.inl",
+		"/C/Users/User/Documents/Helium/Reflect/ReflectPch.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/README.md",
+		"/C/Users/User/Documents/Helium/Reflect/ReflectPch.h",
+		"/C/Users/User/Documents/Helium/Reflect/TranslatorDeduction.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/Object.inl",
+		"/C/Users/User/Documents/Helium/Reflect/Object.h",
+		"/C/Users/User/Documents/Helium/Reflect/Object.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/TranslatorDeduction.h",
+		"/C/Users/User/Documents/Helium/Reflect/Translator.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/Exceptions.h",
+		"/C/Users/User/Documents/Helium/Reflect/LICENSE.md",
+		"/C/Users/User/Documents/Helium/Reflect/Meta.cpp",
+		"/C/Users/User/Documents/Helium/Reflect/Meta.h",
+		"/C/Users/User/Documents/Helium/Reflect/Meta.inl",
+		"/C/Users/User/Documents/Helium/Reflect/API.h",
+		"/C/Users/User/Documents/Helium/Reflect/MetaClass.cpp"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\Users\\User\\Documents\\ProjectChocolat\\Tools\\premake\\Solutions\\ProjectChocolat",
+			"C:\\Users\\User\\Documents\\Helium",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Symbols",
+			"LinkProjects",
+			"startproject",
+			"WinMain",
+			"WindowedApp",
+			"buildoptions",
+			"macos",
+			"platforms",
+			"142e",
+			"04be",
+			"04bf",
+			"04BE",
+			"OUTPUT_DIRECTORY",
+			"OUTPUT",
+			"WX",
+			"FBX",
+			"RequiredFBXVersion"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" \"\", LinkProjects"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Solutions.lua",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "make_API.lua",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/User/Documents/ProjectChocolat/premake4.lua",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 191.0,
+	"status_bar_visible": true
+}

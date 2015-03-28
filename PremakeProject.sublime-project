@@ -1,0 +1,32 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.bmp",
+				"*.png",
+				"*.wav",
+				"*.ogg",
+				"*.sublime*",
+				"*.ipch",
+				"*.sln",
+				"*.pch",
+				"*.sh",
+				"*.bat",
+				"*.sdf",
+				"*.filters",
+				"*.vcxproj",
+				"*.user",
+				"*.gitignore"
+			],
+			"folder_exclude_patterns":
+			[
+				"Linux",
+				"Mac",
+				"Win32"
+			],
+			"path": "Tools/premake"
+		}
+	]
+}

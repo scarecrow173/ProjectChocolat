@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/Users/User/Documents/ProjectChocolat/Tools/premake",
+			"folder_exclude_patterns": ["Win32"],
+			"folder_exclude_patterns": ["Mac"],
+			"folder_exclude_patterns": ["Linux"],
+		}
+	]
+}
