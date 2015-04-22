@@ -1,0 +1,24 @@
+PCM
+	パルス符号変調
+	アナログ信号をパルス列に変換するパルス変調の一つ
+	リニアPCM（LPCM）
+	リニア量子化を使用し、非可逆圧縮を一切しない。
+DPCM
+	差分パルス符号変調
+ADPCM
+	適応的差分パルス符号変調
+DM
+	デルタ変調
+
+●音声データ諸々
+http://www.asahi-net.or.jp/~cv9t-sum/knowledge40.htm
+
+●WAVファイルヘッダ
+http://www.web-sky.org/program/other/wave.php
+
+●spwave(サイト下部に各オーディオフォーマット形式読み書き用ライブラリが掲載されている)
+http://www-ie.meijo-u.ac.jp/~banno/spLibs/spwave/ja/about/main.html
+
+●WAVファイルの各種形式
+http://symfoware.blog68.fc2.com/blog-entry-763.html
+
