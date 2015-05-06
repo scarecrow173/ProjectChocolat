@@ -15,6 +15,8 @@ local  LinkProjects =
 }
 local IncludeDirs ={}
 local ExtensionPathes = {}
+local DebugLinkLibs = {}
+local ReleaseLinkLibs = {}
 if (os.get() == "windows") then
 	local WinDefs = 
 	{
@@ -42,7 +44,27 @@ if (os.get() == "windows") then
 		})
 
 elseif(os.get() == "macosx") then
+	table.insert(IncludeDirs,
+		{
+			"Dependencies/rtaudio-4.1.1/",
+			"Dependencies/rtaudio-4.1.1/include/",
+		}
+	)
 
+	table.insert(DebugLinkLibs,
+		{
+			"CoreAudio.framework",
+			"CoreFoundation.framework",
+			"libpthread.dylib",
+		}
+	)
+	table.insert(ReleaseLinkLibs,
+		{
+			"CoreAudio.framework",
+			"CoreFoundation.framework",
+			"libpthread.dylib",
+	}
+	)
 end
 
 make_API.SetupProject (ProjectName)
@@ -50,6 +72,6 @@ make_API.SettingCppStaticLibProject()
 make_API.SettingCppFiles(ProjectName)
 files(ExtensionPathes)
 --Debug Setting--
-make_API.SetupConfiguration("Debug", DebugDefines, "lib", "",  "", LinkProjects, IncludeDirs, "Symbols")
+make_API.SetupConfiguration("Debug", DebugDefines, "lib", DebugLinkLibs,  "", LinkProjects, IncludeDirs, "Symbols")
 --Release Setting--
-make_API.SetupConfiguration("Release", ReleaseDefines, "lib", "",  "", LinkProjects, IncludeDirs, "Optimize")
+make_API.SetupConfiguration("Release", ReleaseDefines, "lib", ReleaseLinkLibs,  "", LinkProjects, IncludeDirs, "Optimize")

@@ -92,7 +92,12 @@ int Mic::InputRecodeData(
 	Core::U32 AddedSize = _nBufferFrames * target->m_Channels;
 	Core::U32 CurrentSize = target->m_DynamicBuffer.size();
 	target->m_DynamicBuffer.resize(AddedSize + CurrentSize);
-	memcpy_s(&target->m_DynamicBuffer[CurrentSize], AddedSize, _input, AddedSize);
+#ifdef _CHOCOLAT_WINDOWS_
+    memcpy_s(&target->m_DynamicBuffer[CurrentSize], AddedSize, _input, AddedSize);
+#elif _CHOCOLAT_OSX_
+    memcpy(&target->m_DynamicBuffer[CurrentSize], _input, AddedSize);
+#endif
+
 	return 0;
 }
 //===============================================================
