@@ -114,7 +114,7 @@ IMPLEMENT_APP(wxWidgetsSampleApp)
 
 void ConvertPCMToImageData(WAVReader* reader, unsigned char* rawImage)
 {
-    unsigned char* wavtable = reader->pcmData();
+    unsigned char* wavtable = reader->rawRData();
     for (int i=0; i<sizeof(rawImage)/sizeof(rawImage[0]); ++i)
     {
         rawImage[i] = wavtable[i];
