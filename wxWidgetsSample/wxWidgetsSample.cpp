@@ -64,8 +64,11 @@ void wxWidgetsSampleFrame::OnSelectFile(wxCommandEvent& WXUNUSED(event))
 
 		const unsigned int PCMSize = audioLoad.wav->size()/2;
 		unsigned char* rawPCM = new unsigned char[PCMSize];
+#ifdef _CHOCOLAT_WINDOWS_
 		memcpy_s(rawPCM, PCMSize, audioLoad.wav->rawRData(), PCMSize);
-
+#elif _CHOCOLAT_OSX_
+		memcpy(rawPCM, audioLoad.wav->rawRData(), PCMSize);
+#endif
 		ConvertPCMToImageData(rawPCM, rawData);
 
 		wxString path = dlg.GetPath().append(".bmp");
