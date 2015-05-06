@@ -33,7 +33,10 @@ public:
 	void OnQuit(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
 	void OnSave(wxCommandEvent& event);
+	void OnIdle(wxIdleEvent& event);
 	void NotifyUsingFile(const wxString& name);
+
+	void OnDraw();
 
 	wxDECLARE_EVENT_TABLE();
 };

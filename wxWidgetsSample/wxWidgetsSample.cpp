@@ -3,7 +3,7 @@
 #include "ImageWriter.h"
 #include "AudioLoader.h"
 
-void ConvertPCMToImageData(WAVReader* reader, unsigned char* rawImage);
+void ConvertPCMToImageData(unsigned char* rawPCM, unsigned char* rawImage);
 //int main()
 //{
 //    printf("wxWidgetsSample!!\n");
@@ -17,6 +17,7 @@ wxBEGIN_EVENT_TABLE(wxWidgetsSampleFrame, wxFrame)
 	EVT_MENU(SaveFile, wxWidgetsSampleFrame::OnSave)
 	EVT_MENU(Quit, wxWidgetsSampleFrame::OnQuit)
 	EVT_MENU(About, wxWidgetsSampleFrame::OnAbout)
+	EVT_IDLE(wxWidgetsSampleFrame::OnIdle)
 wxEND_EVENT_TABLE()
 
 wxWidgetsSampleFrame::wxWidgetsSampleFrame(const wxString& title)
@@ -54,14 +55,18 @@ void wxWidgetsSampleFrame::OnSelectFile(wxCommandEvent& WXUNUSED(event))
 	if (dlg.ShowModal() == wxID_OK)
 	{
         
-		AudioLoader *audioLoad = new AudioLoader(dlg.GetPath());
+		AudioLoader audioLoad = AudioLoader(dlg.GetPath());
 		
 		const int widht = 256;
 		const int height = 256;
 		const int colorNum = 3; // RGB
 		unsigned char* rawData = new unsigned char[(widht * height) * colorNum];
 
-		ConvertPCMToImageData(audioLoad->wav, rawData);
+		const unsigned int PCMSize = audioLoad.wav->size()/2;
+		unsigned char* rawPCM = new unsigned char[PCMSize];
+		memcpy_s(rawPCM, PCMSize, audioLoad.wav->rawRData(), PCMSize);
+
+		ConvertPCMToImageData(rawPCM, rawData);
 
 		wxString path = dlg.GetPath().append(".bmp");
 		ImageWriter writer;
@@ -101,6 +106,16 @@ void wxWidgetsSampleFrame::OnSave(wxCommandEvent& event)
 void wxWidgetsSampleFrame::NotifyUsingFile(const wxString& name)
 {
 }
+void wxWidgetsSampleFrame::OnIdle(wxIdleEvent& event)
+{
+	event.RequestMore(true);
+	OnDraw();
+}
+
+void wxWidgetsSampleFrame::OnDraw()
+{
+
+}
 
 bool wxWidgetsSampleApp::OnInit()
 {
@@ -112,9 +127,9 @@ bool wxWidgetsSampleApp::OnInit()
 
 IMPLEMENT_APP(wxWidgetsSampleApp)
 
-void ConvertPCMToImageData(WAVReader* reader, unsigned char* rawImage)
+void ConvertPCMToImageData(unsigned char* rawPCM, unsigned char* rawImage)
 {
-    unsigned char* wavtable = reader->rawRData();
+	unsigned char* wavtable = rawPCM;
     for (int i=0; i<sizeof(rawImage)/sizeof(rawImage[0]); ++i)
     {
         rawImage[i] = wavtable[i];
