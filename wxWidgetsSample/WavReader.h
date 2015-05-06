@@ -75,7 +75,9 @@ public:
     unsigned char* pcmData(){ return raw; };
     unsigned char* rawRData(){ return rawlr.Rch; };
     unsigned char* rawLData(){ return rawlr.Lch; };
-    
+    unsigned char* normalizedRawRData(){ return rawlr.normalizedR; };
+    unsigned char* normalizedRawLData(){ return rawlr.normalizedL; };
+
     void initialize();
     void normalize();
     //    void endianCheck();

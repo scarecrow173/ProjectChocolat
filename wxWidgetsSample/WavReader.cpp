@@ -39,16 +39,18 @@ void WAVReader::initialize()
 void WAVReader::normalize()
 {
     int index = 0;
-    for (int i=0; i<sizeof(raw)/sizeof(raw[0]); ++i)
+    unsigned int rawbytes = dataBytes()/channels();
+    for (int i=0; i<rawbytes; ++i)
     {
         if (bits() == 16)
         {
             rawlr.normalizedR[index] = rawlr.Rch[i] * rawlr.Rch[++i] / COLOR_SCALE;
             if (channels() == 2)
             {
-                rawlr.normalizedL[index] = rawlr.Lch[i] * rawlr.Lch[++i] / COLOR_SCALE;
+                rawlr.normalizedL[index] = rawlr.Lch[++i] * rawlr.Lch[++i] / COLOR_SCALE;
             }
         }
+        ++index;
     }
 }
 
@@ -65,10 +67,11 @@ void WAVReader::separateChannels()
 {
     int indexL = 0;
     int indexR = 0;
+    unsigned int rawbytes = header.datachunk.bytes;
     switch (formatType())
     {
         case 0x01: // リニアPCM 0x0001
-            for (int i=0; i<sizeof(raw)/sizeof(raw[0]); ++i)
+            for (int i=0; i<rawbytes; ++i)
             {
                 if (bits() == 8)
                 {
