@@ -9,16 +9,18 @@ local ReleaseDefines =
 {
 	"NDEBUG"
 }
-local LinkProjects ={}
+local LinkProjects ={"Core","Audio"}
 local DebugLinkLibs = {}
 local ReleaseLinkLibs ={}
 local DebugIncludeDirs = 
 {
 	"Dependencies/wxWidgets-3.0.2/include/",
+	"Dependencies/rtaudio-4.1.1/include/",
 }
 local ReleaseIncludeDirs =
 {
-	"Dependencies/wxWidgets-3.0.2/include/",	
+	"Dependencies/wxWidgets-3.0.2/include/",
+	"Dependencies/rtaudio-4.1.1/include/",
 }
 local DebugLibDirs={}
 local ReleaseLibDirs={}

@@ -39,13 +39,15 @@
 /************************************************************************/
 
 // RtAudio: Version 4.1.1
-
+#include "Audio.h"
 #include "RtAudio.h"
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
 #include <climits>
-
+#if defined(__WINDOWS_DS__) || defined(__WINDOWS_ASIO__) || defined(__WINDOWS_WASAPI__)
+#include <algorithm>
+#endif
 // Static variable definitions.
 const unsigned int RtApi::MAX_SAMPLE_RATES = 14;
 const unsigned int RtApi::SAMPLE_RATES[] = {

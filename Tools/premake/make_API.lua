@@ -76,4 +76,15 @@ function SettingCppFiles(projectName)
 		projectName .. "/**.hpp",
 		projectName .. "/**.cpp",
 	}
+	includedirs(projectName)
+end
+----------------------------------
+--	C++ Files Dir Setting		--
+----------------------------------
+function SettingExtensionCppFile( Path )
+--	local PathTable={""}
+	for i, value in pairs(Path) do
+		print(value)
+	end
+	files(PathTable)
 end

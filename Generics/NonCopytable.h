@@ -22,9 +22,9 @@ namespace Chocolat
 			NonCopytable(){};
 			~NonCopytable(){}
 		private:
-			// Not implemented Copy Constracut.
+			/// Not implemented Copy Constracut.
 			NonCopytable(const NonCopytable&);
-			// Not implemented Copy Operator.
+			/// Not implemented Copy Operator.
 			T& operator = (const T&);
 
 		};

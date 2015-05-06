@@ -156,6 +156,7 @@
 // We only need IASIOThiscallResolver at all if we are on Win32. For other
 // platforms we simply bypass the IASIOThiscallResolver definition to allow us
 // to be safely #include'd whatever the platform to keep client code portable
+#include "Audio.h"
 #if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__)) && !defined(_WIN64)
 
 

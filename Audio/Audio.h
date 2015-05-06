@@ -7,3 +7,5 @@
 #pragma once
 
 #include "Core.h"
+
+#include "RtAudio.h"

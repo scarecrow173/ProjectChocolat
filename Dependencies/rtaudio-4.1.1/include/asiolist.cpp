@@ -1,3 +1,4 @@
+#include "Audio.h"
 #include <windows.h>
 #include "iasiodrv.h"
 #include "asiolist.h"

@@ -1,3 +1,4 @@
+#include "Audio.h"
 #include <string.h>
 #include "asiodrivers.h"
 

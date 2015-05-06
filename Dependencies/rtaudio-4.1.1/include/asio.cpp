@@ -7,7 +7,7 @@
 	asio functions entries which translate the
 	asio interface to the asiodrvr class methods
 */ 
-	
+#include "Audio.h"
 #include <string.h>
 #include "asiosys.h"		// platform definition
 #include "asio.h"
