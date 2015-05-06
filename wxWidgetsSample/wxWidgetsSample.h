@@ -33,12 +33,18 @@ public:
 	void OnQuit(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
 	void OnSave(wxCommandEvent& event);
+	void OnPaint(wxPaintEvent& event);
 	void OnIdle(wxIdleEvent& event);
 	void NotifyUsingFile(const wxString& name);
+	void InitGL();
 
 	void OnDraw();
 
 	wxDECLARE_EVENT_TABLE();
+
+	HDC m_DC;
+	HGLRC m_GLRC;
+
 };
 
 // IDs for the controls and the menu commands

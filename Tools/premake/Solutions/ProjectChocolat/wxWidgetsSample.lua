@@ -45,9 +45,17 @@ if (os.get() == "windows") then
 		}
 	)
 	table.insert(DebugIncludeDirs,
-		{"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswud","Dependencies/rtaudio-4.1.1"})
+		{
+			"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswud",
+			"Dependencies/rtaudio-4.1.1",
+			"Dependencies/glew-1.12.0/include",
+			})
 	table.insert(ReleaseIncludeDirs,
-		{"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswu", "Dependencies/rtaudio-4.1.1"})
+		{
+			"Dependencies/wxWidgets-3.0.2/lib/vc_lib/mswu",
+			 "Dependencies/rtaudio-4.1.1",
+			 "Dependencies/glew-1.12.0/include",
+			 })
 
 	table.insert(DebugLinkLibs,
 		{
@@ -64,6 +72,9 @@ if (os.get() == "windows") then
 			"rpcrt4",
 			"wsock32",
 			"wininet",
+			"OpenGl32",
+			"glew32",
+			"glew32s"
 		}
 	)
 	table.insert(ReleaseLinkLibs,
@@ -81,10 +92,23 @@ if (os.get() == "windows") then
 			"rpcrt4",
 			"wsock32",
 			"wininet",
+			"OpenGl32",
+			"glew32",
+			"glew32s"
 	}
 	)
-	table.insert(DebugLibDirs,"Dependencies/wxWidgets-3.0.2/lib/vc_lib")
-	table.insert(ReleaseLibDirs,"Dependencies/wxWidgets-3.0.2/lib/vc_lib")
+	table.insert(DebugLibDirs,
+		{
+			"Dependencies/wxWidgets-3.0.2/lib/vc_lib",
+			"Dependencies/glew-1.12.0/lib/Release/x64",
+		}
+	)
+	table.insert(ReleaseLibDirs,
+		{
+			"Dependencies/wxWidgets-3.0.2/lib/vc_lib",
+			"Dependencies/glew-1.12.0/lib/Release/x64",
+		}
+	)
 
 elseif(os.get() == "macosx") then
 	table.insert(DebugDefines ,
@@ -146,11 +170,13 @@ elseif(os.get() == "macosx") then
 	table.insert(DebugLinkLibs,
 		{
 			"CoreAudio.framework",
+			"OpenGL.framework",
 		}
 	)
 	table.insert(ReleaseLinkLibs,
 		{
 			"CoreAudio.framework",
+			"OpenGL.framework",
 	}
 	)
 	

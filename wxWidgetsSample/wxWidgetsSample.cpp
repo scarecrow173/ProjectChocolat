@@ -1,8 +1,14 @@
 #include "wxWidgetsSample.h"
+#include "wx/graphics.h"
 #include <stdio.h>
 #include "ImageWriter.h"
 #include "AudioLoader.h"
-
+#include "BitmapRenderer.h"
+#ifdef _CHOCOLAT_WINDOWS_
+#pragma comment(lib, "OpenGL32.lib")
+#include "GL/glew.h"
+#endif
+BitmapRenderer* g_Renderer = nullptr;
 void ConvertPCMToImageData(unsigned char* rawPCM, unsigned char* rawImage);
 //int main()
 //{
@@ -17,12 +23,14 @@ wxBEGIN_EVENT_TABLE(wxWidgetsSampleFrame, wxFrame)
 	EVT_MENU(SaveFile, wxWidgetsSampleFrame::OnSave)
 	EVT_MENU(Quit, wxWidgetsSampleFrame::OnQuit)
 	EVT_MENU(About, wxWidgetsSampleFrame::OnAbout)
+	EVT_PAINT(wxWidgetsSampleFrame::OnPaint)
 	EVT_IDLE(wxWidgetsSampleFrame::OnIdle)
 wxEND_EVENT_TABLE()
 
 wxWidgetsSampleFrame::wxWidgetsSampleFrame(const wxString& title)
-	:	wxFrame	(NULL, wxID_ANY, title)
+	:	wxFrame	(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(256,256))
 {
+	InitGL();
 	wxMenu* menuFile = new wxMenu();
 	menuFile->Append(SelectFile, wxT("Select WAV &file...\tCtrl-O"), wxT("Select a new wav file to play"));
 	menuFile->Append(SaveFile, wxT("Save Image &file...\tCtrl-S"), wxT("Save to Image File"));
@@ -106,6 +114,10 @@ void wxWidgetsSampleFrame::OnSave(wxCommandEvent& event)
 		writer.Write(dlg.GetPath(), 256, 256, data);
 	}
 }
+void wxWidgetsSampleFrame::OnPaint(wxPaintEvent& event)
+{	
+
+}
 void wxWidgetsSampleFrame::NotifyUsingFile(const wxString& name)
 {
 }
@@ -117,16 +129,90 @@ void wxWidgetsSampleFrame::OnIdle(wxIdleEvent& event)
 
 void wxWidgetsSampleFrame::OnDraw()
 {
+	glClearColor(0.0f, 0.5f, 1.0f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	if (g_Renderer)
+	{
+		g_Renderer->SetPixelData(nullptr);
+		g_Renderer->Draw(this);
+	}
+	else
+	{
+		g_Renderer = new BitmapRenderer();
+		g_Renderer->SetPixelData(nullptr);
+		g_Renderer->Draw(this);
+	}
+	glFlush();
+	SwapBuffers(m_DC);
+
+	//if (g_Renderer)
+	//	g_Renderer->SetPixelData(nullptr);
+	//this->HandlePaint();
+	//if (g_Renderer)
+	//	g_Renderer->Draw(this);
+	//else
+	//{
+	//	g_Renderer = new BitmapRenderer();
+	//	g_Renderer->SetPixelData(nullptr);
+	//}
+	
+}
+void wxWidgetsSampleFrame::InitGL()
+{
+	// OpenGL初期化
+	// ピクセルフォーマット初期化
+	PIXELFORMATDESCRIPTOR pfd =
+	{
+		sizeof(PIXELFORMATDESCRIPTOR),
+		1,
+		PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER, //Flags
+		PFD_TYPE_RGBA, //The kind of framebuffer. RGBA or palette.
+		32, //Colordepth of the framebuffer.
+		0, 0, 0, 0, 0, 0,
+		0,
+		0,
+		0,
+		0, 0, 0, 0,
+		24, //Number of bits for the depthbuffer
+		8, //Number of bits for the stencilbuffer
+		0, //Number of Aux buffers in the framebuffer.
+		PFD_MAIN_PLANE,
+		0,
+		0, 0, 0
+	};
+	m_DC = GetDC(this->GetHWND());
+	int format = ChoosePixelFormat(m_DC, &pfd);
+	if (format == 0)
+		return; // 該当するピクセルフォーマットが無い
+
+	// OpenGLが使うデバイスコンテキストに指定のピクセルフォーマットをセット
+	if (!SetPixelFormat(m_DC, format, &pfd))
+		return; // DCへフォーマットを設定するのに失敗
+
+	// OpenGL contextを作成
+	m_GLRC = wglCreateContext(m_DC);
+
+	// 作成されたコンテキストがカレント（現在使用中のコンテキスト）か？
+	if (!wglMakeCurrent(m_DC, m_GLRC))
+		return; // 何か正しくないみたい…
 
 }
 
+
 bool wxWidgetsSampleApp::OnInit()
 {
+	wxApp::OnInit();
+	wxInitAllImageHandlers();
+
 	wxFrame *frame = new wxWidgetsSampleFrame( _("Hello World"));
+
+
     frame->Show(true);
     SetTopWindow(frame);
     return true;
 }
+
+
 
 IMPLEMENT_APP(wxWidgetsSampleApp)
 
