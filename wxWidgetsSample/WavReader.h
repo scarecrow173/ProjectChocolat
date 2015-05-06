@@ -7,6 +7,9 @@
 //
 #pragma once
 #include <fstream>
+
+static unsigned int COLOR_SCALE = 256;
+
 typedef struct {
     unsigned int id;       // "fmt "
     unsigned int bytes;    // fmtチャンクのバイト数
@@ -34,20 +37,30 @@ typedef struct {
     dataChunk datachunk;
 } wavFileHeader;
 
+typedef struct {
+    unsigned char *Lch;
+    unsigned char *Rch;
+    unsigned char *normalizedR; // 色数内に正規化した波形データ
+    unsigned char *normalizedL; // 色数内に正規化した波形データ
+} rawLR;
+
 class WAVReader {
     wavFileHeader header;
     std::string filePath;
     unsigned char *raw; // 波形データ
+    rawLR rawlr;
     bool load();
     
 public:
     WAVReader(const char* path){
         filePath = path;
         load();
+        initialize();
     }
     WAVReader(const std::string& path){
         filePath = path;
         load();
+        initialize();
     }
     ~WAVReader(){
         delete[] raw;
@@ -58,5 +71,15 @@ public:
     unsigned int bits(){ return header.fmtchunk.bits; }
     unsigned int channels(){ return header.fmtchunk.channels; };
     unsigned int dataBytes(){ return header.datachunk.bytes; };
+    unsigned int formatType(){ return header.fmtchunk.formatID; };
     unsigned char* pcmData(){ return raw; };
+    unsigned char* rawRData(){ return rawlr.Rch; };
+    unsigned char* rawLData(){ return rawlr.Lch; };
+    
+    void initialize();
+    void normalize();
+    //    void endianCheck();
+    int getOffsetBytes();
+    void separateChannels();
+    
 };
