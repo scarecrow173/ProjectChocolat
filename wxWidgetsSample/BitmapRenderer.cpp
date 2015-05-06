@@ -14,7 +14,6 @@ BitmapRenderer::BitmapRenderer(unsigned int width, unsigned int height)
 	, m_Width	(width)
 	, m_Height	(height)
 	, m_PixelData(nullptr)
-	, m_DC()
 {
 	m_PixelData = new unsigned char[m_Height * m_Width * 3];
 	glGenTextures(0, &m_RenderTarget);
@@ -28,7 +27,7 @@ BitmapRenderer::~BitmapRenderer()
 
 }
 
-void BitmapRenderer::Draw(wxFrame* renderFrame)
+void BitmapRenderer::Draw()
 {
 	glEnable(GL_TEXTURE_2D);
 	glBegin(GL_QUADS);

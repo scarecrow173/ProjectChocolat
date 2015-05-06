@@ -23,7 +23,6 @@ wxBEGIN_EVENT_TABLE(wxWidgetsSampleFrame, wxFrame)
 	EVT_MENU(SaveFile, wxWidgetsSampleFrame::OnSave)
 	EVT_MENU(Quit, wxWidgetsSampleFrame::OnQuit)
 	EVT_MENU(About, wxWidgetsSampleFrame::OnAbout)
-	EVT_PAINT(wxWidgetsSampleFrame::OnPaint)
 	EVT_IDLE(wxWidgetsSampleFrame::OnIdle)
 wxEND_EVENT_TABLE()
 
@@ -114,10 +113,6 @@ void wxWidgetsSampleFrame::OnSave(wxCommandEvent& event)
 		writer.Write(dlg.GetPath(), 256, 256, data);
 	}
 }
-void wxWidgetsSampleFrame::OnPaint(wxPaintEvent& event)
-{	
-
-}
 void wxWidgetsSampleFrame::NotifyUsingFile(const wxString& name)
 {
 }
@@ -125,6 +120,7 @@ void wxWidgetsSampleFrame::OnIdle(wxIdleEvent& event)
 {
 	event.RequestMore(true);
 	OnDraw();
+	
 }
 
 void wxWidgetsSampleFrame::OnDraw()
@@ -134,27 +130,14 @@ void wxWidgetsSampleFrame::OnDraw()
 	if (g_Renderer)
 	{
 		g_Renderer->SetPixelData(nullptr);
-		g_Renderer->Draw(this);
+		g_Renderer->Draw();
 	}
 	else
 	{
 		g_Renderer = new BitmapRenderer();
-		g_Renderer->SetPixelData(nullptr);
-		g_Renderer->Draw(this);
 	}
 	glFlush();
 	SwapBuffers(m_DC);
-
-	//if (g_Renderer)
-	//	g_Renderer->SetPixelData(nullptr);
-	//this->HandlePaint();
-	//if (g_Renderer)
-	//	g_Renderer->Draw(this);
-	//else
-	//{
-	//	g_Renderer = new BitmapRenderer();
-	//	g_Renderer->SetPixelData(nullptr);
-	//}
 	
 }
 void wxWidgetsSampleFrame::InitGL()

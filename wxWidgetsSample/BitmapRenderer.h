@@ -24,11 +24,10 @@ public:
 	BitmapRenderer(unsigned int width = 256, unsigned int height = 256);
 	virtual ~BitmapRenderer();
 	
-	void Draw(wxFrame* renderFrame);
+	void Draw();
 	void SetPixelData(unsigned char* pixelData);
 
-	GLuint m_RenderTarget;//(width, height, 24);
-	wxMemoryDC m_DC;
+	GLuint m_RenderTarget;
 	unsigned int m_Width;
 	unsigned int m_Height;
 	unsigned char* m_PixelData;

@@ -33,7 +33,6 @@ public:
 	void OnQuit(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
 	void OnSave(wxCommandEvent& event);
-	void OnPaint(wxPaintEvent& event);
 	void OnIdle(wxIdleEvent& event);
 	void NotifyUsingFile(const wxString& name);
 	void InitGL();
