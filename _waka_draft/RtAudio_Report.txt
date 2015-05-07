@@ -29,5 +29,6 @@ RtAudio 備忘録
 		TARGETS -> Build Settings -> Build Phases -> Link Binary With Librariesに
 		CoreAudio.frameworkを追加
 		…もしかしたらlibpthread.dylibも必要になるかも。
+		…CoreFoundationも？
 		
 		
