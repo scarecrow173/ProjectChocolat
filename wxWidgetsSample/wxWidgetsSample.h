@@ -40,10 +40,12 @@ public:
 	void OnDraw();
 
 	wxDECLARE_EVENT_TABLE();
-
+    
+#ifdef _CHOCOLAT_WINDOWS_
 	HDC m_DC;
 	HGLRC m_GLRC;
-
+#endif
+    
 };
 
 // IDs for the controls and the menu commands

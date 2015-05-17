@@ -10,8 +10,8 @@ class wxMemoryDC;
 class wxFrame;
 #ifdef _CHOCOLAT_WINDOWS_
 #pragma comment(lib, "OpenGL32.lib")
-#include "GL/glew.h"
 #endif
+#include "GL/glew.h"
 //=======================================================================================
 //!	@class	:	BitmapRenderer
 //!	@brief	:	BitmapRenderer

@@ -6,8 +6,8 @@
 #include "BitmapRenderer.h"
 #ifdef _CHOCOLAT_WINDOWS_
 #pragma comment(lib, "OpenGL32.lib")
-#include "GL/glew.h"
 #endif
+#include "GL/glew.h"
 BitmapRenderer* g_Renderer = nullptr;
 void ConvertPCMToImageData(unsigned char* rawPCM, unsigned char* rawImage);
 //int main()
@@ -137,11 +137,13 @@ void wxWidgetsSampleFrame::OnDraw()
 		g_Renderer = new BitmapRenderer();
 	}
 	glFlush();
+#ifdef _CHOCOLAT_WINDOWS_
 	SwapBuffers(m_DC);
-	
+#endif
 }
 void wxWidgetsSampleFrame::InitGL()
 {
+#ifdef _CHOCOLAT_WINDOWS_
 	// OpenGL初期化
 	// ピクセルフォーマット初期化
 	PIXELFORMATDESCRIPTOR pfd =
@@ -178,7 +180,7 @@ void wxWidgetsSampleFrame::InitGL()
 	// 作成されたコンテキストがカレント（現在使用中のコンテキスト）か？
 	if (!wglMakeCurrent(m_DC, m_GLRC))
 		return; // 何か正しくないみたい…
-
+#endif
 }
 
 

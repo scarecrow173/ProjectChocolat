@@ -7,8 +7,8 @@
 #include "wx/dcgraph.h"
 #ifdef _CHOCOLAT_WINDOWS_
 #pragma comment(lib, "OpenGL32.lib")
-#include "GL/glew.h"
 #endif
+#include "GL/glew.h"
 BitmapRenderer::BitmapRenderer(unsigned int width, unsigned int height)
 	: m_RenderTarget(0)
 	, m_Width	(width)

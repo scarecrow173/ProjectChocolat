@@ -134,7 +134,7 @@ elseif(os.get() == "macosx") then
 	table.insert(ReleaseDefines ,
 		{
 			"$(WX_PREPROCESSOR_DEFINITIONS)",
-			"WXBUILDING",
+			"WXBUILDING=1",
 			"$(WXPLATFORM)",
 			"__WX__",
 			"wxUSE_BASE=1",
@@ -152,18 +152,21 @@ elseif(os.get() == "macosx") then
 		}
 	)
 	table.insert(DebugIncludeDirs, 1,
-		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
+		{
+		"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
 	table.insert(ReleaseIncludeDirs, 1,
 		{"Dependencies/wxWidgets-3.0.2/build/osx/setup/cocoa/include"})
 
 	table.insert(DebugIncludeDirs ,
 		{
 			"Dependencies/rtaudio-4.1.1",
+			"Dependencies/glew-1.12.0/include",
 		}
 	)
 	table.insert(ReleaseIncludeDirs ,
 		{
 			"Dependencies/rtaudio-4.1.1",
+			"Dependencies/glew-1.12.0/include",
 		}
 	)
 	
