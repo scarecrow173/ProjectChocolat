@@ -7,3 +7,4 @@
 #pragma once
 
 #include "MemoryMacros.h"
+#include "MemoryMethods.h"
