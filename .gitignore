@@ -13,6 +13,6 @@
 *.tlog
 *.idb
 
-Document
-obj
-Bin
+Document/Doxygen
+Engine/obj
+Engine/Bin
