@@ -18,33 +18,33 @@ namespace Chocolat
 			PlatformMemory_Windows(){};
 			virtual ~PlatformMemory_Windows(){};
 
-			static INLINE void* Memmove(void* _dst, const void* _src, Core::U32 _size)
+			static CHOCOLAT_INLINE void* Memmove(void* _dst, const void* _src, Core::U32 _size)
 			{
 				return memmove(_dst, _src, _size);
 			}
 
-			static INLINE Core::S32 Memcmp(const void* _first, const void* _second, Core::U32 _size)
+			static CHOCOLAT_INLINE Core::S32 Memcmp(const void* _first, const void* _second, Core::U32 _size)
 			{
 				return memcmp(_first, _second, _size);
 			}
 
-			static INLINE void* Memset(void* _dst, Core::U8 _ch, Core::U32 _size)
+			static CHOCOLAT_INLINE void* Memset(void* _dst, Core::U8 _ch, Core::U32 _size)
 			{
 				return memset(_dst, _ch, _size);
 			}
 
-			static INLINE void* Memzero(void* _dst, Core::U32 _size)
+			static CHOCOLAT_INLINE void* Memzero(void* _dst, Core::U32 _size)
 			{
 				return memset(_dst, 0,_size);
 			}
 
 
-			static INLINE void* Memcpy(void* _dst, const void* _src, Core::U32 _size)
+			static CHOCOLAT_INLINE void* Memcpy(void* _dst, const void* _src, Core::U32 _size)
 			{
 				return memcpy(_dst, _src, _size);
 			}
 
-			static INLINE void Memswap(void* _first, void* _second, Core::U32 _size)
+			static CHOCOLAT_INLINE void Memswap(void* _first, void* _second, Core::U32 _size)
 			{
 				if (_first == _second)
 					return;

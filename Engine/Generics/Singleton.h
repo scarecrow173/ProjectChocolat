@@ -34,13 +34,13 @@ namespace Chocolat
 		template <class T>
 		T* Singleton<T>::m_instance = NULL;
 		//=======================================================================================
-		//		inline method
+		//		CHOCOLAT_INLINE method
 		//=======================================================================================
 		//-------------------------------------------------------------
 		//!	@brief		: Getter
 		//-------------------------------------------------------------
 		template <class T>
-		INLINE T* Singleton<T>::GetInstance()
+		CHOCOLAT_INLINE T* Singleton<T>::GetInstance()
 		{
 			if (!m_instance)
 				m_instance = new T();
@@ -50,7 +50,7 @@ namespace Chocolat
 		//!	@brief		: Destory
 		//-------------------------------------------------------------
 		template <class T>
-		INLINE void Singleton<T>::Destory()
+		CHOCOLAT_INLINE void Singleton<T>::Destory()
 		{
 			SAFE_DELETE(m_instance);
 		}

@@ -65,13 +65,13 @@ public:
 };
 
 template<bool B, typename T = void>
-struct enable {};
+struct Enable {};
 
 template<typename T>
-struct enable < true, T > { typedef T Type; };
+struct Enable < true, T > { typedef T Type; };
 
 template<bool B, typename T>
-struct disable : public enable < !B, T > { };
+struct Disable : public enable < !B, T > { };
 
 }
 }
