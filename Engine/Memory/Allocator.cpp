@@ -1,10 +1,10 @@
 //=======================================================================================
-//!	@file	:	Allocator.h
+//!	@file	:	Allocator.cpp
 //!	@author	:	Akiyoshi Koyama
 //!	@date	:	2015/10/18
 //! @brief	:	Define Memory Allocator
 //=======================================================================================
-#pragma once
+
 #include "Memory.h"
 #include "Allocator.h"
 #include "MemoryMethods.h"

@@ -52,30 +52,30 @@ namespace Chocolat
 		template< class T >
 		static CHOCOLAT_INLINE void MemSet(T& _src, Core::U8 _valueToSet)
 		{
-			FMemory::Memset(&_src, _valueToSet, sizeof(T));
+			PlatformMemory::Memset(&_src, _valueToSet, sizeof(T));
 		}
 
 		/** */
 		template< class T >
 		static CHOCOLAT_INLINE void MemZero(T& _src)
 		{
-			FMemory::Memset(&_src, 0, sizeof(T));
+			PlatformMemory::Memset(&_src, 0, sizeof(T));
 		}
 
 		/** */
 		template< class T >
 		static CHOCOLAT_INLINE void MemCopy(T& _dst, const T& _src)
 		{
-			FMemory::Memcpy(&_dst, &_src, sizeof(T));
+			PlatformMemory::Memcpy(&_dst, &_src, sizeof(T));
 		}
 
 		static CHOCOLAT_INLINE void* Malloc(Core::U32 _size)
 		{
-			MALLOC(_size);
+			return MALLOC(_size);
 		}
 		static CHOCOLAT_INLINE void* Realloc(void* _original, Core::U32 _size)
 		{
-			REALLOC(_original, _size);
+			return REALLOC(_original, _size);
 		}
 		static CHOCOLAT_INLINE void Free(void* _mem)
 		{
